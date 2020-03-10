@@ -18,7 +18,13 @@ void main() {
     );
 
     await tester.pumpWidget(productManagerWidget);
-
+    
     expect(find.text(staringProduct), findsOneWidget);
+
+    await tester.tap(find.byType(RaisedButton));
+    await tester.pump();
+
+    final ProductManagerState widgetState = tester.state(find.byType(ProductManager));
+    expect(widgetState.products.length , 2);
   });
 }
