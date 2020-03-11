@@ -29,7 +29,11 @@ class TrendingNewsState extends State<TrendingNews> {
             builder: (context, snapShot) {
 
               if (!snapShot.hasData) {
-                return CircularProgressIndicator();
+                return Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.white,
+                  )
+                );
               }
 
               List<Article> articleList = snapShot.data.articlesList;
