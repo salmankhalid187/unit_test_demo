@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './addProductsExample/product_manager.dart';
-import './trendingNewsExample/trending_news.dart';
+import './trendingNewsExample/trendingNews.dart';
 
 class ExampleList extends StatelessWidget {
   final List<String> examplesList = [
