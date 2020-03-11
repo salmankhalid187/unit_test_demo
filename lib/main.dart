@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './addProductsExample/product_manager.dart';
+import './exampleList.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,16 +8,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.deepOrange,
-        accentColor: Colors.deepPurple
-      ),
+          brightness: Brightness.dark,
+          primarySwatch: Colors.deepOrange,
+          accentColor: Colors.deepPurple),
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Products List"),
+            title: Text("Examples List"),
           ),
-          body: ProductManager('Flash drive')
-          ),
+          body: ExampleList()),
     );
   }
 }

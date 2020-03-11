@@ -8,4 +8,5 @@ class User {
   String getFullName() {
     return "$firstName $lastName";
   }
+
 }

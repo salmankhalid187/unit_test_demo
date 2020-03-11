@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unit_test_demo/main.dart';
 import 'package:unit_test_demo/addProductsExample/product_manager.dart';
+import 'package:unit_test_demo/exampleList.dart';
 
 void main() {
   testWidgets('MyApp test', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
 
-    expect(find.text('Products List'), findsOneWidget);
-    expect(find.byType(ProductManager), findsOneWidget);
+    expect(find.text('Examples List'), findsOneWidget);
+    expect(find.byType(ExampleList), findsOneWidget);
   });
 
   testWidgets("Products page testing", (WidgetTester tester) async {

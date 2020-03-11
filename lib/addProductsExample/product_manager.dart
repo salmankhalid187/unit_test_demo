@@ -3,7 +3,6 @@ import './products.dart';
 import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
-
   final String startingProduct;
 
   ProductManager(this.startingProduct);
@@ -17,7 +16,7 @@ class ProductManager extends StatefulWidget {
 class ProductManagerState extends State<ProductManager> {
   List<String> products = [];
 
-  @override
+  @override 
   void initState() {
     products.add(widget.startingProduct);
     super.initState();
@@ -31,14 +30,19 @@ class ProductManagerState extends State<ProductManager> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-              margin: EdgeInsets.all(10.0), child: ProductControl(_addProduct)),
-          Products(products)
-        ],
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Products List"),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: ProductControl(_addProduct)),
+              Products(products)
+            ],
+          ),
+        ));
   }
 }
