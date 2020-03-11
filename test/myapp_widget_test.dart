@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unit_test_demo/main.dart';
-import 'package:unit_test_demo/product_manager.dart';
+import 'package:unit_test_demo/addProductsExample/product_manager.dart';
 
 void main() {
   testWidgets('MyApp test', (WidgetTester tester) async {
