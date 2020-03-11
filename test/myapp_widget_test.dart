@@ -12,15 +12,15 @@ void main() {
   });
 
   testWidgets("Products page testing", (WidgetTester tester) async {
-    final staringProduct = 'Product 1';
+    final startingProduct = 'Product 1';
     final productManagerWidget = MaterialApp(
-      home: ProductManager(staringProduct)
+      home: ProductManager(startingProduct)
     );
 
     await tester.pumpWidget(productManagerWidget);
-    
-    expect(find.text(staringProduct), findsOneWidget);
 
+    expect(find.text(startingProduct), findsOneWidget);
+  
     await tester.tap(find.byType(RaisedButton));
     await tester.pump();
 
