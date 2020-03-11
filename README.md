@@ -4,6 +4,12 @@ A new Flutter project.
 
 ## Getting Started
 
+Make sure you have flutter sdk install on your system.
+
+Use `Flutter run` to start app
+
+Use `Flutter test` for unit tests execution.
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
