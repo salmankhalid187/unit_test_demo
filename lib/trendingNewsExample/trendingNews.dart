@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unit_test_demo/trendingNewsExample/article.dart';
+import 'package:unit_test_demo/trendingNewsExample/newsDetail.dart';
 import './apiHelper.dart';
 import 'package:http/http.dart' as http;
 
@@ -49,7 +50,11 @@ class TrendingNewsState extends State<TrendingNews> {
                     child: ListTile(
                       title: Text(articleList[index].title),
                       onTap: () {
-                        print("Item Clicked");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => NewsDetailWidget(articleList[index]),
+                        ));
                       },
                     ),
                   );
