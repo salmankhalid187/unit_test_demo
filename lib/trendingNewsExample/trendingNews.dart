@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unit_test_demo/trendingNewsExample/article.dart';
 import './apiHelper.dart';
+import 'package:http/http.dart' as http;
 
 class TrendingNews extends StatefulWidget {
   @override
@@ -14,7 +15,8 @@ class TrendingNewsState extends State<TrendingNews> {
 
   @override
   void initState() {
-    futureArticleList = ApiHelper.fetchTopNews();
+    var client = http.Client();
+    futureArticleList = ApiHelper.fetchTopNews(client);
     super.initState();
   }
 
