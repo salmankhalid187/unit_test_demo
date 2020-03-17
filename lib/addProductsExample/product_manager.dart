@@ -32,7 +32,7 @@ class ProductManagerState extends State<ProductManager> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Products List"),
+          title: Text("Products List", key: Key("Products page title"),),
         ),
         body: SingleChildScrollView(
           child: Column(

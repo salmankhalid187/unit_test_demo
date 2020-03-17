@@ -17,6 +17,7 @@ class ExampleList extends StatelessWidget {
       itemCount: examplesList.length,
       itemBuilder: (BuildContext context, int index) {
         return Card(
+          key: Key(examplesList[index]),
           child: ListTile(
             title: Text(examplesList[index]),
             onTap: () {

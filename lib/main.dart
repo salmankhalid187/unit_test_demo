@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.deepPurple),
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Examples List"),
+            title: Text("Examples List", key: Key("First page title"),),
           ),
           body: ExampleList()),
     );
