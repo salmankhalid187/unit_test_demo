@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
 import 'package:unit_test_demo/trendingNewsExample/apiHelper.dart';
 import 'package:unit_test_demo/trendingNewsExample/article.dart';
+import 'package:unit_test_demo/trendingNewsExample/globals.dart';
 
 class MockClient extends Mock implements http.Client {}
 
@@ -16,8 +17,9 @@ main() {
       final mockClient = MockClient();
       when(mockClient.get(newsApiUrl))
           .thenAnswer((_) async => http.Response(mockResponseString, 200));
+      httpClient = mockClient;
 
-      expect(await ApiHelper.fetchTopNews(mockClient), isA<ArticleList>());
+      expect(await ApiHelper.fetchTopNews(), isA<ArticleList>());
 
     });
 
@@ -26,8 +28,9 @@ main() {
       final mockClient = MockClient();
       when(mockClient.get(newsApiUrl))
           .thenAnswer((_) async => http.Response('Not Found', 404));
+      httpClient = mockClient;
 
-      expect(ApiHelper.fetchTopNews(mockClient), throwsException);
+      expect(ApiHelper.fetchTopNews(), throwsException);
     });
   });
 }

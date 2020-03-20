@@ -1,13 +1,13 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import './article.dart';
+import './globals.dart';
 
 final String newsApiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=893002e3d88d4d5d90ca13795fcd4943';
 
 class ApiHelper {
-  static Future<ArticleList> fetchTopNews(http.Client client) async {
+  static Future<ArticleList> fetchTopNews() async {
     final response =
-        await client.get(newsApiUrl);
+        await httpClient.get(newsApiUrl);
 
     if (response.statusCode == 200) {
       return ArticleList.fromJson(json.decode(response.body.toString()));
