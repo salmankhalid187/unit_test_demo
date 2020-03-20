@@ -45,6 +45,7 @@ class TrendingNewsState extends State<TrendingNews> {
                 itemCount: articleList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
+                    key: Key("article"),
                     child: ListTile(
                       title: Text(articleList[index].title),
                       onTap: () {

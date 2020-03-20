@@ -8,11 +8,14 @@ Future<void> delay([int milliseconds = 250]) async {
 void main() {
   group('Integration Test Demo App', () {
 
+    final testDelayInMilliSeconds = 1000;
+
     final examplesListPageTitle = find.byValueKey('First page title');
     final addProductsDemoFinderCard = find.byValueKey('Add Products example');
     final productsListPage = find.byValueKey("Products page title");
     final addProductButton = find.byValueKey("Add product button");
     final newsApiDemoFinderCard = find.byValueKey('Trending News example');
+    final newsDetailPage = find.byValueKey('article');
 
     FlutterDriver driver;
 
@@ -34,7 +37,7 @@ void main() {
     test('starts at Examples List', () async {
       expect(await driver.getText(examplesListPageTitle), "Examples List");
 
-      delay(750);
+      await delay(testDelayInMilliSeconds);
     });
 
     test('Navigates to Products page', () async {
@@ -42,22 +45,34 @@ void main() {
 
       expect(await driver.getText(productsListPage), "Products List");
 
-      delay(750);
+      await delay(testDelayInMilliSeconds);
 
       await driver.tap(addProductButton);
 
-      delay(750);
+      await delay(testDelayInMilliSeconds);
 
       await driver.tap(find.pageBack());
       
-      delay(750);
+      await delay(testDelayInMilliSeconds);
     });
 
     test('Navigates to News page', () async {
 
       await driver.tap(newsApiDemoFinderCard);
 
-      delay(4000);
+      await delay(testDelayInMilliSeconds);
+
+    });
+
+    test('Navigates to News detail spage', () async {
+
+      await driver.tap(newsDetailPage);
+
+      await delay(testDelayInMilliSeconds);
+
+      await driver.tap(find.pageBack());
+
+      await delay(testDelayInMilliSeconds);
 
       await driver.tap(find.pageBack());
 
